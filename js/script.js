@@ -1,6 +1,3 @@
-
-
-
 let coinsabilable = 100
 let Counthart = 0
 
@@ -88,6 +85,8 @@ const copyToClipboard = text => {
 
 const callService = (name, number) => {
   if(coinsabilable < 20){
+
+    
     alert("Not enough coins. You need at least 20 coins to place a call.");
     return;
   }
@@ -96,16 +95,34 @@ const callService = (name, number) => {
   addHistoryItem(name, number);
 };
 
-// Event Delegation
+
+
+
+
+
+
+
+
+
+
+
+
 cardcontainer.addEventListener('click', e => {
   const btn = e.target.closest('button');
   if(!btn) return;
 
-const card = btn.parentNode.parentNode; // Bottom row -> card
+const card = btn.parentNode.parentNode; 
+
+
+
  const name = card.children[1].innerText; 
- const number = card.children[2].innerText; // p
+
+
+ const number = card.children[2].innerText; 
 
   if(btn.classList.contains('call-btn')) callService(name, number);
+
+
   else if(btn.classList.contains('copy-btn')) copyToClipboard(number);
   else if(btn.classList.contains('heart-btn')){
 
@@ -117,8 +134,3 @@ const card = btn.parentNode.parentNode; // Bottom row -> card
 });
 
 clearHistoryBtn.onclick = clearHistory;
-
-
-///without arroy function
-// Variables
-
